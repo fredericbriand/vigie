@@ -6,6 +6,10 @@ is notified within the minute.
 
 ![Vigie — map view](docs/screenshots/map.png)
 
+| Incident detail | Design system | Mobile |
+|---|---|---|
+| ![Incident detail](docs/screenshots/incident.png) | ![Design system](docs/screenshots/design-system.png) | ![Mobile](docs/screenshots/mobile.png) |
+
 ## Why
 
 Existing services are single-hazard and national: a wildfire map, a flood
@@ -96,6 +100,12 @@ incidents.
 **Notifications are decoupled from channels.** A notification is persisted
 once, then fanned out to the in-app feed and to web push, so a channel can
 be added without touching the business logic.
+
+**The design system documents itself.** A dev-only styleguide lives at
+`/help` — component gallery, colour palette, icon gallery — built from the
+same primitives the app uses, lazy-loaded and stripped from production
+builds. It is how the five of us stayed consistent without a Storybook
+instance to maintain.
 
 **Accessibility (RGAA).** daisyUI is used for visual styling only;
 interactive components are built on accessible primitives, because
