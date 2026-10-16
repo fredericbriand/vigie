@@ -1,14 +1,14 @@
 {
-	"name": "p3-0526-remote-vigie",
+	"name": "vigie",
 	"version": "0.0.1",
-	"description": "",
-	"homepage": "https://github.com/  (hit Enter to use an empty string)/p3-0526-remote-vigie#readme",
+	"description": "Neighbourhood alert app for natural hazards — React, TypeScript, Node/Express, MySQL",
+	"homepage": "https://github.com/fredericbriand/vigie#readme",
 	"bugs": {
-		"url": "https://github.com/  (hit Enter to use an empty string)/p3-0526-remote-vigie/issues"
+		"url": "https://github.com/fredericbriand/vigie/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/  (hit Enter to use an empty string)/p3-0526-remote-vigie.git"
+		"url": "git+https://github.com/fredericbriand/vigie.git"
 	},
 	"workspaces": ["client", "server"],
 	"scripts": {
@@ -26,7 +26,7 @@
 		"test": "npm run test --workspaces --if-present"
 	},
 	"keywords": [],
-	"author": "  (hit Enter to use an empty string)",
+	"author": "Frédéric Briand",
 	"license": "MIT",
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
