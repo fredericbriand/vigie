@@ -3,8 +3,9 @@
 FROM node:20-alpine
 
 # libc6-compat : requis par certains modules natifs (argon2, sharp)
+# python3 make g++ : argon2 n'a pas de binaire précompilé pour Alpine (musl) et se compile à l'installation
 # hadolint ignore=DL3018
-RUN apk add --no-cache libc6-compat
+RUN apk add --no-cache libc6-compat python3 make g++
 
 WORKDIR /usr/src/app
 
