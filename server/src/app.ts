@@ -5,6 +5,12 @@ import express from "express";
 
 const app = express();
 
+// Behind a hosting proxy (Railway), req.ip would be the proxy's: trust the
+// first hop so the per-IP rate limits see the real client.
+if (process.env.NODE_ENV === "production") {
+	app.set("trust proxy", 1);
+}
+
 // Configure it
 
 /* ************************************************************************* */
