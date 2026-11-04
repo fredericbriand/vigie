@@ -4,6 +4,8 @@ Neighbourhood alert app for natural hazards — a neighbour reports a fire,
 flood, storm or stray animal, and everyone living inside the affected radius
 is notified within the minute.
 
+**[Live demo](https://vigie.up.railway.app/)**
+
 <p align="center">
   <img src="docs/screenshots/map.png" alt="Vigie — map view" width="32%">
   <img src="docs/screenshots/incident.png" alt="Incident detail" width="32%">
