@@ -23,7 +23,8 @@ if (webPushClient.getWebPush() != null) {
 }
 
 // Get the port from the environment variables
-const port = process.env.APP_PORT;
+// PORT is injected by hosting platforms (Railway, Render)
+const port = process.env.APP_PORT ?? process.env.PORT;
 
 // Start the server and listen on the specified port
 app.listen(port, () => {
