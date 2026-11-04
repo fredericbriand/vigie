@@ -81,6 +81,27 @@ npm run check   # Biome + type checking
 npm test        # Jest + Supertest
 ```
 
+## Deploying
+
+Runs as a single service built from the root `Dockerfile`, next to a MySQL
+database (tested on Railway). The Express server serves the compiled client,
+so there is no CORS and no second service.
+
+- **Never run the root `npm run build` in production**: it runs
+  `server/bin/migrate`, which drops the database. The image only builds the
+  client (`npm run build --workspace=client`).
+- **Create the schema once**, by hand, by running `server/database/schema.sql`
+  on the empty production database. `db:migrate` and `db:seed` are for local
+  development.
+- **Variables**: `DB_*`, `APP_SECRET`, `VAPID_*` (generate once, never
+  regenerate), `CLIENT_URL`, `VITE_PUBLIC_URL` (baked into the client at
+  build time, so a change needs a rebuild), `SMTP_FROM`, `METEO_API_KEY`.
+  The port is read from `PORT`.
+- **Email**: many hosts block outbound SMTP. Setting `BREVO_API_KEY` sends
+  through Brevo's HTTPS API instead; without it, `SMTP_*` is used.
+- **Photos** are written to `server/uploads`: mount a persistent volume
+  there, or they are lost on every redeploy.
+
 ## How it works
 
 **Monorepo** — npm workspaces, `client/` and `server/`, one `npm run dev`
