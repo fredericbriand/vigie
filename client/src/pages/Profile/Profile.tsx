@@ -53,8 +53,10 @@ export default function Profile() {
 	);
 
 	const handleLogout = () => {
+		// Navigate first, synchronously: once the user is cleared, PrivateRoute
+		// would redirect to /login with from=/profile and bring them back there.
+		navigate("/", { replace: true, flushSync: true });
 		logout();
-		navigate("/", { replace: true });
 	};
 
 	return (
